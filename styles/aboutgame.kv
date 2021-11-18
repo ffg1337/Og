@@ -1,0 +1,48 @@
+
+
+<AboutGameScreen>:
+    transition: CardTransition()
+    ImgLoader:
+        source: '../img/main.jpg'
+
+    FloatLayout:
+
+        Label:
+            text:"Name Of Game"
+            font_size:'20sp'
+
+            pos_hint: {'x':0.25 ,'y': 0.76}
+            size_hint: 0.5, 0.05
+            padding:dp(20),dp(4)
+            text_size: self.size
+
+            background_color:(0,0,0,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+        Label:
+            font_size:dp(10)
+            anchor_x:'left'
+            anchor_y:'up'
+            text:("fffffffffffffffffffffffffffffffffffffffffffffffffffff \n this game so good\n \n this game so good\n this game so good\n this game so good\n this game so good\n ")
+    HowWidget:
+        padding:dp(20)
+        spacing:dp(150)
+        Button:     #text:'Об авторе \n       и \n    Игре'
+            anchor_x:'left'
+            size_hint:0.1, 0.5
+            text:'назад' #todo &#8656
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+        Button:     #text:'Об авторе \n       и \n    Игре'
+            anchor_x:'right'
+            size_hint:0.1, 0.5
+            text:'тык' #todo &#8656
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+                Factory.AboutGameScreen().any_Function()
